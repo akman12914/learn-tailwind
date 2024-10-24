@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <style type="text/tailwind.css">
+      @layer utilities {
+        .underline-a {
+          padding: 0.12em 0;
+          border-bottom: 3px solid currentColor;
+          text-decoration: none;
+        }
+      }
+    </style>
+    <script src="//cdn.tailwindcss.com"></script>
+    <!-- 가급적 사용하지 않을 것. 이유: cdn 다운되면 어쩔거임? cdn을 포함하면 css파일 뿐만 아니라 이 cdn을 또 컴파일하는 단계까지 필요하기 때문에 성능이 떨어질 것이다.  -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              likelion: "#ff7710",
+              techit: "#fcf943",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- 클래스를 사용자가 확장할 수 있다 -->
+    <!-- extend를 사용 - 기본 클래스를 사용하고, 추가로 클래스를 사용하는 것을 선언 -->
+  </head>
+  <body>
+    <h1 class="underline-a bg-slate-500 text-red-500 text-2xl">테일윈드</h1>
+    <!-- 기본스타일과 h1 스타일이 적용되지않는다 : tailwind의 reset-->
+  </body>
+</html>
